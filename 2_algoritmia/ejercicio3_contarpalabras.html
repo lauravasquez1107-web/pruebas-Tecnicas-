@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Ejercicio 3 - Contar Palabras</title>
+</head>
+<body>
+
+  <h2>Ejercicio 3 - Contar Palabras</h2>
+  <p>Escribe una oracion y te digo cuantas veces aparece cada palabra</p>
+
+  <input type="text" id="entrada" placeholder="ej: hola mundo hola" size="40"/>
+  <button onclick="contar()">Contar</button>
+
+  <ul id="resultado"></ul>
+
+  <script>
+
+    function contar() {
+
+      // cojo la oracion que escribio el usuario
+      var oracion = document.getElementById("entrada").value;
+      var lista = document.getElementById("resultado");
+
+      // limpio la lista por si ya habia resultados antes
+      lista.innerHTML = "";
+
+      // si no escribio nada aviso y salgo
+      if (oracion == "") {
+        lista.innerHTML = "<li>Escribe algo primero</li>";
+        return;
+      }
+
+      // paso todo a minusculas para que Hola y hola cuenten igual
+      oracion = oracion.toLowerCase();
+
+      // quito los signos de puntuacion uno por uno
+      oracion = oracion.replace(/\./g, "");
+      oracion = oracion.replace(/,/g, "");
+      oracion = oracion.replace(/\?/g, "");
+      oracion = oracion.replace(/!/g, "");
+      oracion = oracion.replace(/¿/g, "");
+      oracion = oracion.replace(/¡/g, "");
+
+      // separo la oracion en palabras por los espacios
+      var palabras = oracion.split(" ");
+
+      // objeto donde guardo cuantas veces aparece cada palabra
+      var conteo = {};
+
+      // recorro cada palabra
+      for (var i = 0; i < palabras.length; i++) {
+        var palabra = palabras[i];
+
+        // si esta vacia la salto (por si hay doble espacio)
+        if (palabra == "") continue;
+
+        // si la palabra no esta en el conteo la añado con 1
+        // si ya esta le sumo 1
+        if (conteo[palabra] == undefined) {
+          conteo[palabra] = 1;
+        } else {
+          conteo[palabra] = conteo[palabra] + 1;
+        }
+      }
+
+      // muestro cada palabra con su conteo en la lista
+      for (var palabra in conteo) {
+        var li = document.createElement("li");
+        li.textContent = palabra + ": " + conteo[palabra];
+        lista.appendChild(li);
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

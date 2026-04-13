@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Ejercicio 2 — Descuento</title>
+</head>
+<body>
+
+  <h2>Ejercicio 2 - Descuento</h2>
+  <p>Escribe los precios separados por coma y el porcentaje de descuento</p>
+
+  <input type="text" id="precios" placeholder="ej: 100, 200, 350"/>
+  <br/><br/>
+  <input type="number" id="descuento" placeholder="descuento % ej: 10"/>
+  <br/><br/>
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+
+    function calcular() {
+
+      // cojo los valores del formulario
+      var inputPrecios = document.getElementById("precios").value;
+      var descuento = document.getElementById("descuento").value;
+      var salida = document.getElementById("resultado");
+
+      // convierto el descuento a numero
+      descuento = parseFloat(descuento);
+
+      // compruebo que el descuento sea valido
+      if (descuento < 0 || descuento > 100) {
+        salida.textContent = "El descuento tiene que estar entre 0 y 100";
+        return;
+      }
+
+      // separo los precios por la coma y los meto en un array
+      var precios = inputPrecios.split(",");
+
+      // array donde voy a guardar los precios con descuento
+      var resultado = [];
+
+      // recorro cada precio y le aplico el descuento
+      for (var i = 0; i < precios.length; i++) {
+
+        // convierto el precio a numero
+        var precio = parseFloat(precios[i]);
+
+        // calculo el precio con descuento
+        // formula: precio - (precio * descuento / 100)
+        var precioConDescuento = precio - (precio * descuento / 100);
+
+        // redondeo a 2 decimales
+        precioConDescuento = Math.round(precioConDescuento * 100) / 100;
+
+        // lo añado al array de resultados
+        resultado.push(precioConDescuento);
+      }
+
+      // muestro los resultados
+      salida.textContent = "Precios con descuento: " + resultado.join(", ");
+
+    }
+
+  </script>
+
+</body>
+</html>

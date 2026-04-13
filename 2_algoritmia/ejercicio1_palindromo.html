@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Ejercicio 1 — Palíndromo</title>
+</head>
+<body>
+
+  <h2>Ejercicio 1 - Palindromo</h2>
+  <p>Escribe una palabra o frase y mira si es palindromo</p>
+
+  <input type="text" id="entrada" placeholder="ej: anita lava la tina"/>
+  <button onclick="comprobar()">Comprobar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+
+    function comprobar() {
+
+      // cojo lo que escribio el usuario
+      var texto = document.getElementById("entrada").value;
+
+      // si no escribio nada aviso y salgo
+      if (texto == "") {
+        document.getElementById("resultado").textContent = "Escribe algo primero";
+        return;
+      }
+
+      // paso todo a minusculas para comparar bien
+      texto = texto.toLowerCase();
+
+      // quito las tildes
+      texto = texto.replace(/á/g, "a");
+      texto = texto.replace(/é/g, "e");
+      texto = texto.replace(/í/g, "i");
+      texto = texto.replace(/ó/g, "o");
+      texto = texto.replace(/ú/g, "u");
+
+      // quito los espacios y cualquier cosa que no sea letra
+      texto = texto.replace(/[^a-z]/g, "");
+
+      // comparo la primera letra con la ultima, la segunda con la penultima, etc
+      var esPalindromo = true;
+      var izquierda = 0;
+      var derecha = texto.length - 1;
+
+      while (izquierda < derecha) {
+        if (texto[izquierda] != texto[derecha]) {
+          // si alguna no coincide ya no es palindromo
+          esPalindromo = false;
+          break;
+        }
+        izquierda = izquierda + 1;
+        derecha = derecha - 1;
+      }
+
+      // muestro el resultado
+      if (esPalindromo) {
+        document.getElementById("resultado").textContent = "SI es palindromo";
+      } else {
+        document.getElementById("resultado").textContent = "NO es palindromo";
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

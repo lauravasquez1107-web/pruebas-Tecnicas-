@@ -1,0 +1,103 @@
+/* estilos generales de la pagina */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* la tarjeta principal */
+.card {
+  background-color: white;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* banda de color arriba de la tarjeta */
+.banner {
+  background-color: #5147d6;
+  height: 100px;
+}
+
+/* contenido dentro de la tarjeta */
+.card-body {
+  padding: 0 24px 28px;
+  text-align: center;
+}
+
+/* contenedor de la foto para que salga a mitad del banner */
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -44px;
+  margin-bottom: 14px;
+}
+
+/* foto de perfil redonda */
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 4px solid white;
+  overflow: hidden;
+}
+
+/* la imagen ocupa todo el circulo */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* nombre */
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+/* rol o cargo */
+.role {
+  font-size: 14px;
+  color: #5147d6;
+  margin-bottom: 20px;
+}
+
+/* linea separadora */
+.divider {
+  border: none;
+  border-top: 1px solid #ebebf0;
+  margin-bottom: 20px;
+}
+
+/* fila de estadisticas */
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* cada estadistica */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* numero grande */
+.stat-number {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a2e;
+}
+
+/* texto pequeño debajo del numero */
+.stat-label {
+  font-size: 12px;
+  color: #9090a8;
+}

@@ -1,0 +1,120 @@
+/* estilos generales de la pagina */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #5147d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* tarjeta blanca del formulario */
+.card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* titulo del formulario */
+.card-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* subtitulo debajo del titulo */
+.card-subtitle {
+  font-size: 14px;
+  color: #9090a8;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* cada campo del formulario (label + input) */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+/* etiqueta del campo */
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+/* caja de texto */
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border: 2px solid #e0e0ec;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1a1a2e;
+  outline: none;
+}
+
+/* cuando el usuario hace click en el input */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #5147d6;
+}
+
+/* enlace de olvidaste contrasena */
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #5147d6;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* boton de entrar */
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5147d6;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.btn-submit:hover {
+  background-color: #3f38b0;
+}
+
+/* texto de registrate */
+.register-link {
+  text-align: center;
+  font-size: 14px;
+  color: #9090a8;
+}
+
+.register-link a {
+  color: #5147d6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

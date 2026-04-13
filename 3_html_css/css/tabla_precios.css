@@ -1,0 +1,170 @@
+/* estilos generales de la pagina */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+/* contenedor principal centrado */
+.section {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* titulo de la seccion */
+.section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 36px;
+}
+
+/* fila con las 3 tarjetas */
+.plans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* cada tarjeta de precio */
+.plan {
+  background-color: white;
+  border-radius: 16px;
+  padding: 28px 24px;
+  width: 240px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* cabecera de la tarjeta */
+.plan-header {
+  text-align: center;
+}
+
+/* nombre del plan */
+.plan-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+/* precio grande */
+.plan-price {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1a1a2e;
+}
+
+/* texto /mes pequeño */
+.plan-price span {
+  font-size: 14px;
+  font-weight: normal;
+  color: #9090a8;
+}
+
+/* lista de caracteristicas sin puntos */
+.plan-features {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+/* cada caracteristica con un check delante */
+.plan-features li {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 8px;
+}
+
+.plan-features li::before {
+  content: "✓ ";
+  color: #5147d6;
+  font-weight: bold;
+}
+
+/* boton de cada tarjeta */
+.plan-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #d0d0e0;
+  background-color: white;
+  color: #5147d6;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.plan-btn:hover {
+  background-color: #f0eeff;
+}
+
+/* tarjeta destacada (plan pro) - fondo morado */
+.plan.featured {
+  background-color: #5147d6;
+}
+
+.plan.featured .plan-name,
+.plan.featured .plan-price {
+  color: white;
+}
+
+.plan.featured .plan-price span {
+  color: #ccccff;
+}
+
+.plan.featured .plan-features li {
+  color: white;
+}
+
+.plan.featured .plan-features li::before {
+  color: #a8f0d8;
+}
+
+.plan.featured .plan-btn {
+  background-color: white;
+  border-color: white;
+  color: #5147d6;
+}
+
+/* tarjeta enterprise - fondo oscuro */
+.plan.enterprise {
+  background-color: #1a1a2e;
+}
+
+.plan.enterprise .plan-name,
+.plan.enterprise .plan-price {
+  color: white;
+}
+
+.plan.enterprise .plan-price span {
+  color: #888888;
+}
+
+.plan.enterprise .plan-features li {
+  color: #cccccc;
+}
+
+.plan.enterprise .plan-features li::before {
+  color: #a8f0d8;
+}
+
+.plan.enterprise .plan-btn {
+  border-color: #555555;
+  color: white;
+  background-color: transparent;
+}
+
+.plan.enterprise .plan-btn:hover {
+  background-color: #2a2a3e;
+}
